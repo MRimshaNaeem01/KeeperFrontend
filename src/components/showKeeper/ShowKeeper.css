@@ -20,7 +20,7 @@
 .title {
     margin-bottom: 1rem;
     font-family: 'Texturina', serif;
-    color: rgb(5, 6, 7);
+    color: rgb(30, 140, 249);
     display: flex;
     align-items: center;
     
@@ -34,15 +34,57 @@
     color: rgb(17, 22, 20);
     font-family: 'Kanit', sans-serif;
     outline: none;
-    background: rgb(248, 217, 217);
+    background: rgb(248, 231, 231);
     border: none;
-    /* border-radius: 20px; */
+    font-size: 15px;
 }
 
 .deleteIcon {
     color: rgb(173, 3, 3);
     position: absolute;
-    right: 30px;
-    font-size: 1rem;
+    right: 15px;
+    font-size: 1.1rem;
     cursor: pointer;
+    top: 10.7px;
+}
+.deleteIcon :hover{
+    font-weight: bold;
+    background-color: rgb(173, 3, 3);
+    font-size: 1.2rem;
+    color: white;
+    border: 1px solid rgb(173, 3, 3);
+}
+.updateIcon {
+    color: rgb(17, 240, 69);
+    position: absolute;
+    right: 39px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    top: 10px;
+}
+.updateIcon :hover {
+    background-color: rgb(17, 240, 69);
+    color: white;
+    font-size: 1.2rem;
+    border: 1px solid rgb(17, 240, 69);
+
+
+}
+.updateing{
+    color:  rgb(17, 240, 69);
+    position: absolute;
+    border: 1px solid rgb(17, 240, 69);
+    right: 35px;
+    cursor: pointer;
+    top: 7px;
+    font-size: 12px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+.updateing :hover{
+    border: transparent;
+    font-size: 13px;
 }

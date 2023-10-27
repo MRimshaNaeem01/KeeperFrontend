@@ -15,14 +15,14 @@ body{
 .inputBox {
     border: none;
     border-radius: 10px;
-    margin: 0.5rem;
+    margin: 0.5rem auto;
     padding: 1rem;
     background:rgb(252, 222, 212);
     outline: none;
 }
 
 .inputBox::placeholder {
-    color:rgb(36, 35, 35);
+    color:rgb(169, 165, 165);
 }
 
 .titleInput {
@@ -41,16 +41,21 @@ body{
 }
 
 .addButton {
-    color: rgb(12, 11, 11);
-    font-weight:bold;
-    /* background: linear-gradient( to bottom right, rgb(245, 244, 244) , rgb(238, 225, 221) ); */
+    color: rgb(255, 143, 143);
+    font-weight: 14px;
     margin: 0.5rem auto;
-    padding: 0.5rem 4.5rem;
+    padding: 0.5rem 2rem;
     font-family: 'Texturina', serif;
-    border-radius: 20px;
-    /* box-shadow: rgba(50, 50, 93, 0.5) 0px 50px 100px -20px, rgba(207, 51, 51, 0.5) 0px 30px 60px -30px, rgba(10, 37, 64, 0.5) 0px -2px 6px 0px inset; */
+    /* border-radius: 20px; */
     cursor: pointer;
-    border: 2px solid rgb(243, 158, 158);
+    font-size: 16px;
+    border: 1px solid rgb(244, 147, 147);
+    background: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 .content {
     padding: 30px;

@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './AddKeeper.css';
 import axios from "axios";
-import { Alert, Space, Spin } from 'antd';
+import { Alert, Button, Input, Space, Spin } from 'antd';
+const { TextArea } = Input;
+
 
 const AddKeeper = ({ setKeeperList }) => {
+
+  const [alert, setAlert] = useState(false); // State to manage read-only status
+  const [alertVisible, setAlertVisible] = useState(false);
 
     const [keeperObj, setKeeperObj] = useState({
         title: "",
@@ -18,6 +23,19 @@ const AddKeeper = ({ setKeeperList }) => {
         })
         // console.log(keeperObj, "keeper")
     }
+
+    
+  useEffect(() => {
+    // Use a timer to hide the alert after 2 seconds
+    if (alertVisible) {
+      const timer = setTimeout(() => {
+        setAlertVisible(false);
+      }, 4000); // 2000 milliseconds = 2 seconds
+
+      return () => clearTimeout(timer); // Clear the timer on component unmount
+    }
+  }, [alertVisible]);
+
     const add = () => {
         if (keeperObj.title) {
             setLoading(true)
@@ -31,7 +49,10 @@ const AddKeeper = ({ setKeeperList }) => {
             })
         }
         else {
-            alert("Kindly Enter your title!")
+   
+            setAlert(true)
+            setAlertVisible(true); // Show the alert and start the timer
+      
         }
     }
     // console.log(keeperObj, "keeper")
@@ -41,9 +62,14 @@ const AddKeeper = ({ setKeeperList }) => {
                 <div className="content" />
             </Spin>}
 
+            {alert && alertVisible &&  (
+              <Alert message="Title can't be empty" type="warning" 
+              style={{ color: 'red', fontSize: '17px', fontWeight: 'bold' ,border: '1px solid red', width: '50%', margin: 'auto', marginTop: '10px'}}/>
+          )}
+
             <div className="addKeeper">
 
-                <input
+                <Input
                     className="inputBox titleInput"
                     type="text"
                     name="title"
@@ -53,14 +79,14 @@ const AddKeeper = ({ setKeeperList }) => {
                     value={keeperObj.title}
                 />
 
-                <textarea
+                <Input.TextArea
                     className="inputBox description"
                     name="description"
                     placeholder="Add Description Here"
                     onChange={handleChange}
                     value={keeperObj.description}
                 />
-                <div className="addButton" onClick={add}>Add</div>
+                <Button className="addButton" onClick={add}>Add Keeper</Button>
             </div>
         </>
     )

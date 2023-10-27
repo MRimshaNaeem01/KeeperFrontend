@@ -8,16 +8,17 @@ import axios from 'axios';
 function App() {
   const [keeperList, setKeeperList] = useState([]);
 
+  
   useEffect(() => {
- axios.get('http://localhost:8000/api/getAll').then(res => setKeeperList(res.data));
-  }, [])
+    axios.get('http://localhost:8000/api/getAll').then(res => setKeeperList(res.data));
+  }, []);
 
   return (
     <div className="App">
       {/* {console.log(keeperList)} */}
-     <Header />
-     <AddKeeper keeperList={keeperList} setKeeperList={setKeeperList}/>
-     <ShowKeeper keeperList={keeperList} setKeeperList={setKeeperList}/>
+      <Header />
+      <AddKeeper keeperList={keeperList} setKeeperList={setKeeperList} />
+      <ShowKeeper keeperList={keeperList} setKeeperList={setKeeperList} />
     </div>
   );
 }
