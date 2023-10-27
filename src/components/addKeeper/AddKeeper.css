@@ -1,12 +1,15 @@
 .addKeeper {   
     display: flex;
     flex-direction: column;
-    background: rgb(0, 0, 0);
+    background: #fff;
     padding: 1rem;
     border-radius: 20px;
     margin: 3rem auto;
     width:fit-content;
-    box-shadow: rgba(0, 0, 0, 0.5) 10px 10px 20px;
+    box-shadow: rgba(180, 61, 61, 0.6) 10px 10px 20px;
+}
+body{
+    background-color: rgb(250, 250, 250);
 }
 
 .inputBox {
@@ -14,17 +17,17 @@
     border-radius: 10px;
     margin: 0.5rem;
     padding: 1rem;
-    background:rgb(76, 76, 77);
+    background:rgb(252, 222, 212);
     outline: none;
 }
 
 .inputBox::placeholder {
-    color:rgb(167, 166, 166);
+    color:rgb(36, 35, 35);
 }
 
 .titleInput {
     font-size: 1.5rem;
-    color: rgb(82, 171, 240);
+    color:rgb(44, 42, 42);
     font-family: 'Texturina', serif;
 }
 
@@ -33,18 +36,24 @@
     font-family: 'Kanit', sans-serif;
     min-height: 100px;
     min-width: 400px;
-    color: rgb(102, 201, 156);
+    color:rgb(77, 75, 75);
     resize: none;
 }
 
 .addButton {
-    color: black;
+    color: rgb(12, 11, 11);
     font-weight:bold;
-    background: linear-gradient( to bottom right, rgb(114, 248, 185) , rgb(82, 171, 240) );
+    /* background: linear-gradient( to bottom right, rgb(245, 244, 244) , rgb(238, 225, 221) ); */
     margin: 0.5rem auto;
     padding: 0.5rem 4.5rem;
     font-family: 'Texturina', serif;
     border-radius: 20px;
-    box-shadow: rgba(50, 50, 93, 0.5) 0px 50px 100px -20px, rgba(0, 0, 0, 0.5) 0px 30px 60px -30px, rgba(10, 37, 64, 0.5) 0px -2px 6px 0px inset;
+    /* box-shadow: rgba(50, 50, 93, 0.5) 0px 50px 100px -20px, rgba(207, 51, 51, 0.5) 0px 30px 60px -30px, rgba(10, 37, 64, 0.5) 0px -2px 6px 0px inset; */
     cursor: pointer;
+    border: 2px solid rgb(243, 158, 158);
 }
+.content {
+    padding: 30px;
+    background: rgba(11, 63, 63, 0.05);
+    border-radius: 4px;
+  }

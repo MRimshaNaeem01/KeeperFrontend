@@ -1,19 +1,30 @@
-import React from 'react';
+import axios from 'axios';
 import './ShowKeeper.css'
 
-const ShowKeeper = () => {
+const ShowKeeper = ({keeperList, setKeeperList}) => {
+
+  const deleteKeeper = (id) =>{   
+   axios.post(`http://localhost:8000/api/delete/${id}`)
+   .then(res => setKeeperList(res.data));
+    }
   return (
     <div className="showKeeper row">
-      <div className="keeperCard col-md-3">
+    { keeperList.map( keeper => (
+        <div key={keeper._id} className="keeperCard col-md-3">
         <h1 className="title">
-          <i className="deleteIcon fa fa-trash"
+          {keeper.title}
+          <i className="deleteIcon fa fa-trash" onClick={()=> deleteKeeper(keeper._id)}
             aria-hidden="true"  ></i>
+            
         </h1>
         <textarea
           className="descriptionBox"
-          value="wsqwswq sqs"
+          value={keeper.description}
           readOnly />
       </div>
+      ))
+    }
+     
     </div>
   )
 }
